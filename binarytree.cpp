@@ -19,4 +19,19 @@ class BinaryTree
 {
     public :
     node *ROOT;
+
+    BinaryTree()
+    {
+        ROOT = nullptr;
+    }
+
+    void insert ()
+    {
+        int x;
+        cout << "masukkan nilai: ";
+        cin >> x;
+
+        node *newnode = new node ();
+        newnode->info = x;
+    }
 }
