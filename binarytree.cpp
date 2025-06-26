@@ -120,3 +120,10 @@ public:
             cout << ptr->info<< " ";
         
     }
+
+    bool isempty()
+    {
+        return ROOT == nullptr;
+    }
+
+};
