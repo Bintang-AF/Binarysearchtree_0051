@@ -90,4 +90,19 @@ public:
         cout << ptr->info <<" ";
         inorder(ptr->rightchild);
     }
-    
+    void preorder(node *ptr)
+    {
+        if (isempty())
+        {
+            cout << "tree is empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+        return;
+
+        cout << ptr->info<< " ";
+        preorder(ptr->leftchild);
+        preorder (ptr->rightchild);
+    }
+
+   
