@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
-class node 
+class node
 {
-    public:
+public:
     int info;
     node *leftchild;
     node *rightchild;
 
-    node ()
+    node()
     {
         leftchild = nullptr;
         rightchild = nullptr;
@@ -17,7 +17,7 @@ class node
 
 class BinaryTree
 {
-    public :
+public:
     node *ROOT;
 
     BinaryTree()
@@ -25,17 +25,17 @@ class BinaryTree
         ROOT = nullptr;
     }
 
-    void insert ()
+    void insert()
     {
         int x;
         cout << "masukkan nilai: ";
         cin >> x;
 
-        node *newnode = new node ();
+        node *newnode = new node();
         newnode->info = x;
 
         newnode->leftchild = nullptr;
-        newnode -> rightchild= nullptr;
+        newnode->rightchild = nullptr;
 
         node *parent = nullptr;
         node *currentnode = nullptr;
@@ -49,16 +49,30 @@ class BinaryTree
 
         if (x < parent->info)
         {
-            parent ->leftchild = newnode ;
+            parent->leftchild = newnode;
 
-            return ;
+            return;
         }
 
-        else if (x > parent -> info)
+        else if (x > parent->info)
         {
             parent->rightchild = newnode;
 
             return;
         }
     }
-}
+
+    void search(int element, node *&parent, node *&currentnode)
+    {
+        currentnode = ROOT;
+        parent = nullptr;
+        while ((currentnode != nullptr) && (currentnode->info != element))
+        {
+            parent = currentnode;
+            if (element < currentnode->info)
+            currentnode = currentnode->leftchild;
+            else 
+            currentnode = currentnode->rightchild;
+        }
+    }
+};
