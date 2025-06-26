@@ -43,7 +43,10 @@ class BinaryTree
 
         if (parent == nullptr)
         {
-            
+            ROOT = newnode;
+            return;
         }
+
+        if (x < parent->info)
     }
 }
